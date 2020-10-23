@@ -2,7 +2,7 @@
 Hotkeys:
 Ctrl-Alt-I: Toggle active window always on top
 Ctrl-Alt-O: Make active window opaque
-Ctrl-Alt-P: Make active window transparent
+Ctrl-Alt-P: Make active window translucent
 Ctrl-Alt-V: Paste path - pastes the contents of the clipboard, changing all backslashes to forward slashes
 */
 
@@ -36,3 +36,6 @@ return
 !^V::
 	modifiedClipboard := StrReplace(clipboard, "\", "/")
 	SendInput {Text}%modifiedClipboard%
+	
+!^H::
+	MsgBox,,Hotkeys,Ctrl-Alt-I: Toggle active window always on top`nCtrl-Alt-O: Make active window opaque`nCtrl-Alt-P: Make active window translucent`nCtrl-Alt-V: Paste path - pastes the contents of the clipboard`, changing all backslashes to forward slashes,10
